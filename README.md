@@ -8,3 +8,6 @@
 
 1. use vue ui to install package or dependency
 2. just use command "vue ui"
+
+# Run development mode
+1. npm run serve
