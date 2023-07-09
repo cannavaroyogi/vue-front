@@ -13,6 +13,34 @@
           </router-link>
         </div>
       </div>
+      <div v-if="load" class="row mb-4">
+        <div class="col text-center">
+          <div class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-secondary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-success" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-light" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          </div>
+      </div>
       <div class="row mb-4">
         <!-- Rumus menghitung kolom bootsrap 12/nilai md misal nilai md-3 berarti 12/3 = 4, 
         jadi ada 4 kolom yang bisa di render dalam 1 baris 
@@ -45,7 +73,8 @@ export default {
   data() {
     return {
       products: [],
-      bestproducts: []
+      bestproducts: [],
+      load: true
     }
   },
   methods: {
@@ -61,6 +90,7 @@ export default {
     .then((response) => {
       //console.log("Success: ",response.data.data);
       this.setProduct(response.data.data);
+      this.load = false;
     }).catch ((err) =>{
       console.log(err)
     });
