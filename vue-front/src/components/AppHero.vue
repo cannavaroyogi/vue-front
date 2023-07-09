@@ -11,8 +11,8 @@
                 Setiap Hari !!!
               </h1>
               <p>Ayo segera koleksi komik barumu !!</p>
-              <router-link class="btn btn-lg btn-danger" to="/"
-                >Tambah Koleksi</router-link
+              <router-link class="btn btn-lg btn-danger" to="/comics"
+                >Cari Komik</router-link
               >
             </div>
           </div>
@@ -37,8 +37,8 @@
                 Setiap Hari !!!
               </h1>
               <p>Ayo segera koleksi komik barumu !!</p>
-              <router-link class="btn btn-lg btn-danger" to="/"
-                >Tambah Koleksi</router-link
+              <router-link class="btn btn-lg btn-danger" to="/comics"
+                >Cari Komik</router-link
               >
             </div>
           </div>
