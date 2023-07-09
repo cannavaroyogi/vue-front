@@ -44,22 +44,35 @@ export default {
   },
   data() {
     return {
-      products: []
+      products: [],
+      bestproducts: []
     }
   },
   methods: {
     setProduct(data) {
       this.products = data
+    },
+    setBestProduct(data) {
+      this.bestproducts = data
     }
   },
   mounted() {
-    axios.get('http://127.0.0.1/products')
+    axios.get('http://127.0.0.1/bestproducts')
     .then((response) => {
       //console.log("Success: ",response.data.data);
       this.setProduct(response.data.data);
     }).catch ((err) =>{
       console.log(err)
     });
+
+    axios.get('http://127.0.0.1/bestproducts')
+    .then((response) => {
+      console.log("Success: ",response.data.data);
+      this.setBestProduct(response.data.data);
+    }).catch ((err) =>{
+      console.log(err)
+    });
+
   }
 };
 </script>
