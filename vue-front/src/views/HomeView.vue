@@ -78,6 +78,7 @@ export default {
       bestproducts: [],
       load: true,
       modalId: 'modalId',
+      url: "127.0.0.1",
       showModal: false // Add this line
     }
   },
@@ -96,7 +97,7 @@ export default {
     }
   },
   mounted() {
-    axios.get('http://192.168.130.215/bestproducts')
+    axios.get('http://'+this.url+'/bestproducts')
     .then((response) => {
       //console.log("Success: ",response.data.data);
       this.setProduct(response.data.data);
@@ -105,7 +106,7 @@ export default {
       console.log(err)
     });
 
-    axios.get('http:/192.168.130.215/bestproducts')
+    axios.get('http://'+this.url+'/bestproducts')
     .then((response) => {
       console.log("Success: ",response.data.data);
       this.setBestProduct(response.data.data);

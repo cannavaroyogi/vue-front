@@ -52,7 +52,8 @@ export default {
       products: [],
       bestproducts: [],
       search: '',
-      modalId: "modalId"
+      modalId: "modalId",
+      url: "127.0.0.1",
     }
   },
   methods: {
@@ -63,7 +64,7 @@ export default {
       this.bestproducts = data
     },
     searchProduct(){
-      axios.get('http://192.168.130.215/products/'+this.search)
+      axios.get('http://'+this.url+'/products/'+this.search)
       .then((response) => {
         //console.log("Success: ",response.data.data);
         this.setProduct(response.data.data);
@@ -73,7 +74,7 @@ export default {
     }
   },
   mounted() {
-    axios.get('http://192.168.130.215/products')
+    axios.get('http://'+this.url+'/products')
     .then((response) => {
       //console.log("Success: ",response.data.data);
       this.setProduct(response.data.data);
