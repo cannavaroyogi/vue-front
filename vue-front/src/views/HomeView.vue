@@ -43,9 +43,12 @@
         jadi ada 4 kolom yang bisa di render dalam 1 baris 
         v-for untuk foreach di vue-->
         <div class="col-md-4 mt-4 mb-4" v-for="product in products" :key="product.id">
-          <CardProduct :product=  "product"/>
+          <CardProduct :product=  "product" :modalId="modalId"/>
         </div>
       </div>
+    </div>
+    <div class="modal-detail" v-for="product in products" :key="product.id">
+      <ModalDetail :product="product" :modalId="modalId"/>
     </div>
     <AppFooter />
   </div>
@@ -57,6 +60,7 @@ import AppNavbar from "@/components/AppNavbar.vue";
 import AppHero from "@/components/AppHero.vue";
 import CardProduct from "@/components/CardProduct.vue";
 import AppFooter from "@/components/AppFooter.vue";
+import ModalDetail from "@/components/ModalDetail.vue";
 import axios from 'axios';
 
 export default {
@@ -65,16 +69,25 @@ export default {
     AppNavbar,
     AppHero,
     CardProduct,
-    AppFooter
+    AppFooter,
+    ModalDetail
   },
   data() {
     return {
       products: [],
       bestproducts: [],
-      load: true
+      load: true,
+      modalId: 'modalId',
+      showModal: false // Add this line
     }
   },
   methods: {
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    },
     setProduct(data) {
       this.products = data
     },
@@ -83,7 +96,7 @@ export default {
     }
   },
   mounted() {
-    axios.get('http://127.0.0.1/bestproducts')
+    axios.get('http://192.168.130.215/bestproducts')
     .then((response) => {
       //console.log("Success: ",response.data.data);
       this.setProduct(response.data.data);
@@ -92,7 +105,7 @@ export default {
       console.log(err)
     });
 
-    axios.get('http://127.0.0.1/bestproducts')
+    axios.get('http:/192.168.130.215/bestproducts')
     .then((response) => {
       console.log("Success: ",response.data.data);
       this.setBestProduct(response.data.data);
