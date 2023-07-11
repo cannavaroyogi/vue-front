@@ -1,8 +1,9 @@
 <template>
   <div class="hero">
     <!-- Desktop -->
-    <div class="d-none d-md-block">
-      <div class="row mt-2">
+    <div class="d-none d-md-block mb-4">
+      <b-card class="card shadow card-img-top card-hero">
+        <div class="row mt-2">
         <div class="col-md-6">
           <div class="d-flex h-100">
             <div class="justify-content-center align-self-center">
@@ -11,16 +12,15 @@
                 Setiap Hari !!!
               </h1>
               <p>Ayo segera koleksi komik barumu !!</p>
-              <router-link class="btn btn-lg btn-danger" to="/comics"
-                >Cari Komik</router-link
-              >
+              <router-link class="btn btn-lg btn-danger" to="/comics"><strong> Cari Komik</strong></router-link>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <img src="../assets/images/image.png" width="100%" loading="lazy"/>
+          <img src="../assets/images/image.png" width="100%" height="100%" loading="lazy"/>
         </div>
       </div>
+      </b-card>
     </div>
 
     <!-- Mobile  -->

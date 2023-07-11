@@ -9,8 +9,7 @@
         </div>
         <div class="col">
           <router-link to="/comics" class="btn btn-danger float-right"
-            ><b-icon-eye></b-icon-eye> Lihat semua
-          </router-link>
+            >Lihat semua</router-link>
         </div>
       </div>
       <div v-if="load" class="row mb-4">
@@ -78,7 +77,7 @@ export default {
       bestproducts: [],
       load: true,
       modalId: 'modalId',
-      url: "127.0.0.1",
+      url: "192.168.130.207",
       showModal: false // Add this line
     }
   },
@@ -106,13 +105,13 @@ export default {
       console.log(err)
     });
 
-    axios.get('http://'+this.url+'/bestproducts')
-    .then((response) => {
-      console.log("Success: ",response.data.data);
-      this.setBestProduct(response.data.data);
-    }).catch ((err) =>{
-      console.log(err)
-    });
+    // axios.get('http://'+this.url+'/bestproducts')
+    // .then((response) => {
+    //   console.log("Success: ",response.data.data);
+    //   this.setBestProduct(response.data.data);
+    // }).catch ((err) =>{
+    //   console.log(err)
+    // });
 
   }
 };

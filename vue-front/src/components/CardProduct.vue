@@ -12,7 +12,8 @@
                     </div>
                     <div class="col">
                         <!-- <a href="#" class="btn btn-lg btn-danger"><strong>Detail</strong></a> -->
-                        <router-link to="/addkoleksi" class="btn btn-danger float-right"><b-icon-plus width="30" height="30"></b-icon-plus></router-link>
+                        <!-- <router-link to="/addkoleksi" class="btn btn-danger float-right read-more-info-icon modal-right"><b-icon-plus width="30" height="30"></b-icon-plus><span class="hidden-info">Tambah Koleksi</span></router-link> -->
+                        <router-link to="/addkoleksi" class="btn btn-danger float-right read-more-info-icon modal-right add-button"></router-link>
                     </div>
                 </div>
             </div>

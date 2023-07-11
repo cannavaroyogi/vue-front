@@ -53,7 +53,7 @@ export default {
       bestproducts: [],
       search: '',
       modalId: "modalId",
-      url: "127.0.0.1",
+      url: "192.168.130.207",
     }
   },
   methods: {
@@ -82,13 +82,13 @@ export default {
       console.log(err)
     });
 
-    axios.get('http://192.168.130.215/bestproducts')
-    .then((response) => {
-      console.log("Success: ",response.data.data);
-      this.setBestProduct(response.data.data);
-    }).catch ((err) =>{
-      console.log(err)
-    });
+    // axios.get('http://192.168.130.215/bestproducts')
+    // .then((response) => {
+    //   console.log("Success: ",response.data.data);
+    //   this.setBestProduct(response.data.data);
+    // }).catch ((err) =>{
+    //   console.log(err)
+    // });
 
   }
 }
