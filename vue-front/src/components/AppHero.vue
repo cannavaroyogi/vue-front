@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <img src="../assets/images/image.png" width="100%" />
+          <img src="../assets/images/image.png" width="100%" loading="lazy"/>
         </div>
       </div>
     </div>
