@@ -3,7 +3,7 @@
         <hr />
         <div class="container">
             <div class="row">
-                <div class="col text-center">
+                <div class="col text-center mt-4 mb-4">
                     ©2023 copyright cannavaro yogi pratama with vue.js and node.js
                 </div>
             </div>

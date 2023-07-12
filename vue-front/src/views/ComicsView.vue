@@ -53,7 +53,7 @@ export default {
       bestproducts: [],
       search: '',
       modalId: "modalId",
-      url: "192.168.130.207",
+      url: "127.0.0.1",
     }
   },
   methods: {

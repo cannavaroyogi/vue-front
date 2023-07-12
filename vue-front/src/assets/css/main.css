@@ -78,3 +78,59 @@
     transform: translate(-50%, -50%);
     white-space: nowrap;
   }
+
+  
+  /* Shimmer */
+  .br {
+    border-radius: 5px;  
+  }
+  
+  .w20 {
+    width: 20%;
+  }
+
+  .w40 {
+     width: 40%;
+  }
+
+  .w60 {
+    width: 60%;
+ }
+  
+  
+  .pic {
+    height: 500px;
+    width: auto;
+    position: relative;
+    background: #777;
+    border-radius: 2%;
+  }
+  
+  .comment {
+    height: 20px;
+    background: #777;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .animate {
+     animation : shimmer 2s infinite;
+     background: linear-gradient
+     (to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+     background-size: 1000px 100%;
+  }
+  
+  .shimmer {
+    color: grey;
+    display:inline-block;
+    -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2s infinite;
+    font-size: 50px;
+    max-width:500px;
+  }
+  
+  @keyframes shimmer {
+    100% {-webkit-mask-position:left}
+  }

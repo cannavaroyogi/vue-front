@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col">
                         <!-- <a href="#" class="btn btn-lg btn-danger" width="100" height="48" data-toggle="modal" :data-target="`#${modalId}`"><strong>Detail</strong></a> -->
-                        <b-button class="btn btn-lg btn-danger" v-b-modal=product.code_product>Detail</b-button>
+                        <b-button class="btn btn-lg btn-danger float-left" v-b-modal=product.code_product>Detail</b-button>
                     </div>
                     <div class="col">
                         <!-- <a href="#" class="btn btn-lg btn-danger"><strong>Detail</strong></a> -->

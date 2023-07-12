@@ -12,42 +12,23 @@
             >Lihat semua</router-link>
         </div>
       </div>
-      <div v-if="load" class="row mb-4">
-        <div class="col text-center">
-          <div class="spinner-grow text-primary" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          <div class="spinner-grow text-secondary" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          <div class="spinner-grow text-success" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          <div class="spinner-grow text-danger" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          <div class="spinner-grow text-warning" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          <div class="spinner-grow text-info" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          <div class="spinner-grow text-dark" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-          </div>
-      </div>
+      <!-- <div v-if="load" >
+        <LoadingBar />
+      </div> -->
+      <CardShimmer v-if="showShimmer" />
       <div class="row mb-4">
         <!-- Rumus menghitung kolom bootsrap 12/nilai md misal nilai md-3 berarti 12/3 = 4, 
         jadi ada 4 kolom yang bisa di render dalam 1 baris 
         v-for untuk foreach di vue-->
         <div class="col-md-4 mt-4 mb-4" v-for="product in products" :key="product.id">
-          <CardProduct :product=  "product" :modalId="modalId"/>
+          <CardProduct v-if="!showShimmer" :product=  "product" :modalId="modalId"/>
         </div>
       </div>
     </div>
     <div class="modal-detail" v-for="product in products" :key="product.id">
       <ModalDetail :product="product" :modalId="modalId"/>
+    </div>
+    <div class="snack-bar" v-snackbar>
     </div>
     <AppFooter />
   </div>
@@ -60,6 +41,8 @@ import AppHero from "@/components/AppHero.vue";
 import CardProduct from "@/components/CardProduct.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import ModalDetail from "@/components/ModalDetail.vue";
+// import LoadingBar from "@/components/LoadingBar.vue";
+import CardShimmer from "@/components/CardShimmer.vue";
 import axios from 'axios';
 
 export default {
@@ -69,7 +52,9 @@ export default {
     AppHero,
     CardProduct,
     AppFooter,
-    ModalDetail
+    ModalDetail,
+    // LoadingBar,
+    CardShimmer
   },
   data() {
     return {
@@ -77,8 +62,9 @@ export default {
       bestproducts: [],
       load: true,
       modalId: 'modalId',
-      url: "192.168.130.207",
-      showModal: false // Add this line
+      url: "127.0.0.1",
+      showModal: false,
+      showShimmer: true // Add this line
     }
   },
   methods: {
@@ -100,7 +86,9 @@ export default {
     .then((response) => {
       //console.log("Success: ",response.data.data);
       this.setProduct(response.data.data);
-      this.load = false;
+      setTimeout(() => {
+          this.showShimmer = false;
+        }, 1000);
     }).catch ((err) =>{
       console.log(err)
     });
