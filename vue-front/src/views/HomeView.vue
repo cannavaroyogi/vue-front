@@ -88,18 +88,10 @@ export default {
       this.setProduct(response.data.data);
       setTimeout(() => {
           this.showShimmer = false;
-        }, 1000);
+        }, 3000);
     }).catch ((err) =>{
       console.log(err)
     });
-
-    // axios.get('http://'+this.url+'/bestproducts')
-    // .then((response) => {
-    //   console.log("Success: ",response.data.data);
-    //   this.setBestProduct(response.data.data);
-    // }).catch ((err) =>{
-    //   console.log(err)
-    // });
 
   }
 };
