@@ -267,13 +267,13 @@ header .image-text .header-text{
     height: 500px;
     width: auto;
     position: relative;
-    background: #777;
+    background: #4d0505;
     border-radius: 2%;
   }
   
   .comment {
     height: 20px;
-    background: #777;
+    background: #4d0505;
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -287,9 +287,9 @@ header .image-text .header-text{
   }
   
   .shimmer {
-    color: grey;
+    color: rgb(92, 86, 86);
     display:inline-block;
-    -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 80%) right/300% 100%;
     background-repeat: no-repeat;
     animation: shimmer 2s infinite;
     font-size: 50px;
