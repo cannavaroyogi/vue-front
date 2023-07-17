@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <SideBar />
     <AppNavbar />
     <div class="container">
       <AppHero />
@@ -43,6 +44,7 @@ import AppFooter from "@/components/AppFooter.vue";
 import ModalDetail from "@/components/ModalDetail.vue";
 // import LoadingBar from "@/components/LoadingBar.vue";
 import CardShimmer from "@/components/CardShimmer.vue";
+import SideBar from "@/components/SideBar.vue";
 import axios from 'axios';
 
 export default {
@@ -54,7 +56,8 @@ export default {
     AppFooter,
     ModalDetail,
     // LoadingBar,
-    CardShimmer
+    CardShimmer,
+    SideBar
   },
   data() {
     return {
